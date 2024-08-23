@@ -30,6 +30,12 @@ public class CarController {
     }
 
 
+    @GetMapping("/cars/{count}")
+    public String printTable(@PathVariable("count") Integer count, Model model) {
+        model.addAttribute("cars", carDAO.carTable(count));
+        return "cars";
+    }
+
 
 
     @GetMapping("/cars")
