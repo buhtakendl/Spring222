@@ -22,7 +22,7 @@ public class CarController {
     }
 
     @GetMapping("/cars")
-    public String printTable(@RequestParam(name = "count", required = false, defaultValue = "0") Integer count, ModelMap model) {
+    public String printTable(@RequestParam(name = "count", required = false, defaultValue = "0") Integer count, Model model) {
         model.addAttribute("cars", carDAO.carTable(count));
         return "cars";
     }
